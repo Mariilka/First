@@ -4,7 +4,7 @@ using System;
 
 namespace First
 {
-    static class Logic
+    public static class Logic
     {
         public static bool IsThreeDigitNumber(int number)
         {
