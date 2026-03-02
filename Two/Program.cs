@@ -7,9 +7,14 @@ using System.Threading.Tasks;
 namespace Two
 {
     public static class Logic
-    { 
-        //НАЧАЛО логики
-            for (int i = 1; i<sequence.Length; i++)
+    {
+        // Метод для подсчета изменений знака в последовательности
+        public static int CountSignChanges(int[] sequence)
+        {
+            int signChanges = 0;
+
+            
+            for (int i = 1; i < sequence.Length; i++)
             {
                 // Проверяем, поменялся ли знак между текущим и предыдущим элементом
                 if ((sequence[i - 1] > 0 && sequence[i] < 0) ||
@@ -17,23 +22,29 @@ namespace Two
                 {
                     signChanges++;
                 }
-        }//КОНЕЦ логики
-    }
-        public class Program
-    {
-        static void Main(string[] args)
-        {
-            //НАЧАЛО работы с данными
-            int[] sequence = { 10, -4, 12, 56, -4 };
-
-            int signChanges = 0;
-            //КОНЕЦ работы с данными
-
+            }
             
 
-            //НАЧАЛО работы с консолью
-            Console.WriteLine($"В последовательности [{string.Join(", ", sequence)}]");
-            Console.WriteLine($"Знак меняется {signChanges} раз(а)");
-            //КОНЕЦ работы с консолью
+            return signChanges;
         }
+        public class Program
+        {
+            static void Main(string[] args)
+            {
+                //НАЧАЛО работы с данными
+                int[] sequence = { 10, -4, 12, 56, -4, 8 };
+                //КОНЕЦ работы с данными
+
+                int signChanges = Logic.CountSignChanges(sequence);
+
+                //НАЧАЛО работы с консолью
+                Console.WriteLine($"В последовательности [{string.Join(", ", sequence)}]");
+                Console.WriteLine($"Знак меняется {signChanges} раз(а)");
+                //КОНЕЦ работы с консолью
+            }
+        }
+
+
+
+    }
 }
