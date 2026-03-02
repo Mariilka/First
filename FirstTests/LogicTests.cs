@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace First.Tests
 {
     [TestClass()]
@@ -20,11 +21,13 @@ namespace First.Tests
         [TestMethod()]
         public void IsThreeDigitNumberTest()
         {
+
             int number = 100;
 
             bool result = Logic.IsThreeDigitNumber(number);
 
-            Assert.True(result);
+            Assert.IsTrue(result);
         }
+            
     }
 }
