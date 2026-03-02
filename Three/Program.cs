@@ -10,30 +10,40 @@ namespace Three
     {
         static void Main()
         {
-            Console.WriteLine("Введите предложение:");
-            string sentence = Console.ReadLine();
+            Logic textAnalyzer = new Logic();
 
-            double letterPercentage = CalculateLetterPercentage(sentence);
 
-            Console.WriteLine($"Доля букв в предложении: {letterPercentage:F2}%");
-        }
-
-        static double CalculateLetterPercentage(string text)
-        {
-            if (string.IsNullOrEmpty(text))
-                return 0;
-
-            int letterCount = 0;
-
-            foreach (char c in text)
+            while (true)
             {
-                if (char.IsLetter(c))
-                {
-                    letterCount++;
-                }
+                Console.WriteLine("\nВведите предложение (или 'exit' для выхода):");
+                string sentence = Console.ReadLine();
+
+                if (sentence?.ToLower() == "exit")
+                    break;
+
+                // Используем метод из класса Logic
+                double letterPercentage = textAnalyzer.CalculateLetterPercentage(sentence);
+
+                Console.WriteLine($"\nРезультат анализа:");
+                Console.WriteLine($"Предложение: \"{sentence}\"");
+                Console.WriteLine($"Доля букв: {letterPercentage:F2}%");
             }
 
-            return (double)letterCount / text.Length * 100;
+
+
+        }
+        public class Logic
+        {
+            public double CalculateLetterPercentage(string text)
+            {
+                if (string.IsNullOrEmpty(text))
+                    return 0;
+
+                int letterCount = text.Count(char.IsLetter);
+                int totalChars = text.Length;
+
+                return (double)letterCount / totalChars * 100;
+            }
         }
     }
 }
