@@ -15,7 +15,12 @@ namespace First.Tests
         [TestMethod()]
         public void FindMaxDigitTest()
         {
-            Assert.Fail();
+            int number = 321;
+            int expected = 3;
+
+            int result = Logic.FindMaxDigit(number);
+
+            Assert.AreEqual(expected, result);
         }
 
         [TestMethod()]
@@ -28,6 +33,7 @@ namespace First.Tests
 
             Assert.IsTrue(result);
         }
-            
+
+       
     }
 }
