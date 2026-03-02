@@ -24,7 +24,6 @@ namespace Three
                 // Используем метод из класса Logic
                 double letterPercentage = textAnalyzer.CalculateLetterPercentage(sentence);
 
-                Console.WriteLine($"\nРезультат анализа:");
                 Console.WriteLine($"Предложение: \"{sentence}\"");
                 Console.WriteLine($"Доля букв: {letterPercentage:F2}%");
             }
