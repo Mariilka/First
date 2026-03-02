@@ -11,10 +11,17 @@ namespace Three.Program.Tests
     [TestClass()]
     public class LogicTests
     {
+
         [TestMethod()]
         public void CalculateLetterPercentageTest()
         {
-            Assert.Fail();
+            Logic logic = new Logic();
+            string text = "Привет, мир!";
+            double expected = 75.0; // 9 букв из 12 символов
+
+            double result = logic.CalculateLetterPercentage(text);
+
+            Assert.AreEqual(expected, result, 0.001);
         }
     }
 }

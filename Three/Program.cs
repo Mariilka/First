@@ -31,8 +31,9 @@ namespace Three
 
 
         }
-        public class Logic
-        {
+    }
+    public class Logic
+    {
             public double CalculateLetterPercentage(string text)
             {
                 if (string.IsNullOrEmpty(text))
@@ -43,6 +44,6 @@ namespace Three
 
                 return (double)letterCount / totalChars * 100;
             }
-        }
-    }
+     }
+    
 }
